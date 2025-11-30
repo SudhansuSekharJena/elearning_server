@@ -15,22 +15,11 @@ const port = process.env.PORT || 3000
 
 // It means the data we will send from frontend will be in the form of json.
 app.use(express.json())
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://elearning-frontend-blush.vercel.app"
-];
-
 app.use(cors({
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: "GET, POST, PUT, DELETE",
-  credentials: true
-}));
+  origin:"http://localhost:5173",
+  methods:"GET, POST, PUT, DELETE",
+  credentials: true,
+}))
 // now we can do cross request
 
 
