@@ -16,10 +16,7 @@ const port = process.env.PORT || 3000
 // It means the data we will send from frontend will be in the form of json.
 app.use(express.json())
 app.use(cors({
-   origin: [
-    "http://localhost:5173",
-    "https://elearning-frontend-blush.vercel.app"
-  ],
+   origin:"https://elearning-frontend-blush.vercel.app",
   methods:"GET, POST, PUT, DELETE",
   credentials: true,
 }))
